@@ -13,7 +13,7 @@
   "script-js" : [
     {
       "jquery/jquery" : "",
-      "soswapp/them.soswapp" : ""
+      "7os/them-soswapp" : ""
     }
   ],
   "script-css" : []
