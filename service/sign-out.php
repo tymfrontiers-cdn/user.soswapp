@@ -1,14 +1,13 @@
 <?php
 namespace TymFrontiers;
-require_once "../app.init.php";
-require_once APP_BASE_INC;
+require_once "../.appinit.php";
 require_once APP_ROOT . "/src/Helper.php";
 if (!$session->isLoggedIn()) HTTP\Header::redirect(WHOST);
 $session->logout();
 HTTP\Header::redirect(WHOST);
 ?>
 <!DOCTYPE html>
-<html lang="en" dir="ltr" manifest="<?php echo WHOST; ?>/site.webmanifest">
+<html lang="en" dir="ltr" manifest="/site.webmanifest">
   <head>
     <meta charset="utf-8">
     <title>Logging you out | <?php echo PRJ_TITLE; ?></title>

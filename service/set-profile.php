@@ -1,6 +1,6 @@
 <?php
 namespace TymFrontiers;
-require_once "../app.init.php";
+require_once "../.appinit.php";
 require_once APP_BASE_INC;
 \require_login(false);
 
@@ -34,7 +34,7 @@ $user = \SOS\User::find($session->name);
     <div class="padding -p20">&nbsp;</div>
     <br class="c-f">
     <div class="grid-8-tablet grid-6-desktop center-tablet">
-      <div class="sec-div color blue bg-white drop-shadow">
+      <div class="sec-div color face-primary bg-white drop-shadow">
         <header class="padding -p20 color-bg">
           <h1> <i class="fas fa-user-circle"></i> My profile</h1>
         </header>
@@ -52,9 +52,7 @@ $user = \SOS\User::find($session->name);
             id="set-profile-form"
             class="block-ui"
             method="post"
-            action="/src/SetProfile.php"
-            data-path="/user"
-            data-domain="<?php echo WHOST;?>"
+            action="/app/tymfrontiers-cdn/user.soswapp/src/SetProfile.php"
             data-validate="false"
             onsubmit="sos.form.submit(this,doneSetting);return false;"
             >
@@ -143,7 +141,7 @@ $user = \SOS\User::find($session->name);
             </div>
             <div class="grid-7-phone grid-4-tablet">
               <br>
-              <button id="submit-form" type="submit" class="btn blue"> <i class="fas fa-save"></i> Save </button>
+              <button id="submit-form" type="submit" class="btn face-primary"> <i class="fas fa-save"></i> Save </button>
             </div>
 
             <br class="c-f">

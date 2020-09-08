@@ -1,7 +1,7 @@
 <?php
 namespace TymFrontiers;
 use \SOS\User;
-require_once "../app.init.php";
+require_once "../.appinit.php";
 require_once APP_BASE_INC;
 
 \header("Content-Type: application/json");
@@ -19,6 +19,7 @@ $http_auth = $auth->validApp ();
 if( !$http_auth && ( empty($post['form']) || empty($post['CSRF_token']) ) ){
   HTTP\Header::unauthorized (false,'', Generic::authErrors ($auth,"Request [Auth-App]: Authetication failed.",'self',true));
 }
+if (!empty($post['otp'])) $post['otp'] = \str_replace(['-','.','_'],'',\trim($post['otp']));
 $params = $gen->requestParam(
   [
     "email" =>["email","email"],

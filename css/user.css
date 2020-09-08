@@ -51,30 +51,6 @@
   opacity: 0.8;
 }
 
-#crop-base {
-  position: relative;
-  text-align: center !important;
-  min-height: 280px;
-  background-image: url(../img/upload-file.png);
-  background-repeat: no-repeat;
-  background-position: center;
-}
-#crop-base img.prev-set {
-  width: 100%;
-  height: auto;
-}
-#crop-base #input-trigger {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: auto;
-  margin: 0;
-  float: none;
-}
-#crop-base.engaged #input-trigger {
-  display: none;
-}
-
 .sht-btn {
   background-color: transparent;
   -webkit-box-shadow: none;
@@ -120,6 +96,48 @@
 #usr-dashlist li p {
   margin: 0;
   font-size: 0.85em;
+}
+
+#usrbg-covr {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+#usrbg-covr img {
+  height: 100%;
+  width: 100%;
+}
+
+#data-pager {
+  position: relative;
+  float: right;
+  margin: 20px 0 20px;
+  padding: 8px;
+}
+#data-pager .sos-btn, #data-pager .btn {
+  display: inline-block;
+  margin: 0;
+  padding: 12px 18px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  -webkit-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+}
+#data-pager .sos-btn:first-child, #data-pager .btn:first-child {
+  border-top-left-radius: 22px;
+  border-bottom-left-radius: 22px;
+}
+#data-pager .sos-btn:last-child, #data-pager .btn:last-child {
+  border-top-right-radius: 22px;
+  border-bottom-right-radius: 22px;
 }
 
 /*# sourceMappingURL=user.css.map */

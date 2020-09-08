@@ -1,8 +1,7 @@
 <?php
 namespace TymFrontiers;
 use \SOS\User;
-require_once "../app.init.php";
-require_once APP_BASE_INC;
+require_once "../.appinit.php";
 
 $data = new Data;
 \header("Content-Type: application/json");
@@ -61,7 +60,7 @@ $remember = !(bool)$params['remember'] ? \strtotime("+ 1 Hour") : \strtotime("+ 
 $session->login($user,$remember);
 $database = new MySQLDatabase(MYSQL_SERVER, MYSQL_USER_USERNAME, MYSQL_USER_PASS);
 $rdt = empty($params['rdt'])
-  ? WHOST . "/user"
+  ? "/app/user"
   : $params['rdt'];
 
 echo \json_encode([

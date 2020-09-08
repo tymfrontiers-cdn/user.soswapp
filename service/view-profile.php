@@ -1,6 +1,6 @@
 <?php
 namespace TymFrontiers;
-require_once "../app.init.php";
+require_once "../.appinit.php";
 require_once APP_BASE_INC;
 \require_login(false);
 

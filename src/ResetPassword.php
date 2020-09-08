@@ -2,8 +2,7 @@
 namespace TymFrontiers;
 use \SOS\User,
     \Mailgun\Mailgun;
-require_once "../app.init.php";
-require_once APP_BASE_INC;
+require_once "../.appinit.php";
 
 $data = new Data;
 \header("Content-Type: application/json");
@@ -54,11 +53,6 @@ if( !$http_auth ){
     exit;
   }
 }
-//
-// echo " <tt> <pre>";
-// print_r($params);
-// echo "</pre></tt>";
-// exit;
 if( !User::valExist($params['email'],"email") ){
   echo \json_encode([
     "status" => "3.1",
@@ -87,11 +81,10 @@ $auth_param = [
   "rdt" => $rdt,
 ];
 $whost = WHOST;
-$auth_link = Generic::setGet(WHOST . "/user/do-pwd-reset", $auth_param);
+$auth_link = Generic::setGet(WHOST . "/app/tymfrontiers-cdn/user.soswapp/service/do-pwd-reset.php", $auth_param);
 $subject = "Password reset instruction";
 $prj_title = PRJ_TITLE;
-$prj_bot = PRJ_BOT_HELP;
-$prj_icon = WHOST . "/assets/img/logo.png";
+$prj_icon = \defined("PRJ_EMAIL_ICON") ? PRJ_EMAIL_ICON : PRJ_ICON_150X150;
 $prj_color_primary = PRJ_PRIMARY_COLOUR;
 // OTP
 
@@ -114,13 +107,13 @@ VMSG;
 $message = <<<WELCOME
 <header style="border-bottom: solid 5px {$prj_color_primary}; padding: 12px; margin-bottom: 8px;">
   <a href="{$whost}/user"><img style="width:auto; height:72px; margin:0 0 3px 3px; float:right" src="{$prj_icon}" alt="Logo"></a>
-  <h1 style="margin: 1.5px">{$subject}</h1>
   <br style="float:none; clear:both; padding:0; margin:0; height:0px;">
+  <h1 style="margin: 2.5px 0 2.5px">{$subject}</h1>
 </header>
 <section>
   {$verify_msg}
   <p><b>NOTE:</b> If you did not request a password reset, ignore this message and do not forward this message to anyone.</p>
-  <p>Have a wonderful time, <br> {$prj_bot}.</p>
+  <p>Have a wonderful time, <br> Support - {$prj_title}.</p>
 </section>
 WELCOME;
 

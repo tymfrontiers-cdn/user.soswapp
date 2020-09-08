@@ -1,3 +1,10 @@
+const usrLayout = () => {
+  console.log("Layout started");
+  $("#usrbg-covr").css({
+    height : `${$(window).height()}px`,
+    width : `${$(window).width()}px`
+  });
+};
 function signUp(resp) {
   if( resp && ( resp.errors.length <= 0 || resp.status == "0.0") ){
     // $('#register-form').reset();
@@ -57,7 +64,7 @@ function dsblResend (){
 }
 $.fn.fetchLocal = function(param){
   var dom = $(this).find('optgroup'),
-      url = (window.location.protocol + '//' + window.location.hostname + "/user/fetch-local"),
+      url = `/app/tymfrontiers-cdn/user.soswapp/service/fetch-local.php`,
       containr = $(this);
   dom.html('');
   containr.prop('disabled',true).css('cursor','progress');
@@ -103,14 +110,15 @@ function resetSent(resp) {
       dsblResend();
       minTimer(7 * 60,"#cnt-timer", enblResend);
       $("#btn-msg").text("Resend");
-      $("#password-reset-form input[name=email]").prop("disabled",true);
-      $("#password-reset-form").attr("action", "/ResendOTP.php");
+      $("#password-reset-form input[name=email]").prop("disabled",true);      
+      $("#password-reset-form").attr("action", "/app/tymfrontiers-cdn/user.soswapp/src/ResendOTP.php");
       $("#password-reset-form").addClass("resend-otp");
     }
   }
 }
 (function(){
   // generic runtime tasks
+  // usrLayout(); $(window).bind("resize", usrLayout);
   if ($('select[name=country_code]').length > 0 && $('select[name=state_code]').length > 0) {
     var has_city = $('select[name=city_code]').length > 0;
     $('select[name=country_code]').change(function(){

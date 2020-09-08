@@ -1,7 +1,6 @@
 <?php
 namespace TymFrontiers;
-require_once "../app.init.php";
-require_once APP_BASE_INC;
+require_once "../.appinit.php";
 require_once APP_ROOT . "/src/Helper.php";
 \require_login(true);
 $gen = new Generic;
@@ -34,10 +33,10 @@ if ($database->query("UPDATE `{$base_db}`.`user` SET status='ACTIVE' WHERE email
   $success = true;
   $session->logout();
 }
-$rdt = !empty($rdt) ? $rdt : WHOST . "/user/login";
+$rdt = !empty($rdt) ? $rdt : "/app/user/login";
 ?>
 <!DOCTYPE html>
-<html lang="en" dir="ltr" manifest="<?php echo WHOST; ?>/site.webmanifest">
+<html lang="en" dir="ltr" manifest="/site.webmanifest">
   <head>
     <meta charset="utf-8">
     <title>Email verification | <?php echo PRJ_TITLE; ?></title>
@@ -48,24 +47,24 @@ $rdt = !empty($rdt) ? $rdt : WHOST . "/user/login";
     <meta name="publisher" content="<?php echo PRJ_PUBLISHER; ?>">
     <meta name="robots" content='nofollow'>
     <!-- Theming styles -->
-    <link rel="stylesheet" href="<?php echo WHOST; ?>/7os/font-awesome-soswapp/css/font-awesome.min.css">
-    <link rel="stylesheet" href="<?php echo WHOST; ?>/7os/theme-soswapp/css/theme.min.css">
-    <link rel="stylesheet" href="<?php echo WHOST; ?>/7os/theme-soswapp/css/theme-<?php echo PRJ_THEME; ?>.min.css">
+    <link rel="stylesheet" href="/app/soswapp/font-awesome.soswapp/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/app/soswapp/theme.soswapp/css/theme.min.css">
+    <link rel="stylesheet" href="/app/soswapp/theme.soswapp/css/theme-<?php echo PRJ_THEME; ?>.min.css">
     <!-- optional plugin -->
-    <link rel="stylesheet" href="<?php echo WHOST; ?>/7os/plugin-soswapp/css/plugin.min.css">
-    <link rel="stylesheet" href="<?php echo WHOST; ?>/7os/dnav-soswapp/css/dnav.min.css">
-    <link rel="stylesheet" href="<?php echo WHOST; ?>/7os/faderbox-soswapp/css/faderbox.min.css">
+    <link rel="stylesheet" href="/app/soswapp/plugin.soswapp/css/plugin.min.css">
+    <link rel="stylesheet" href="/app/soswapp/dnav.soswapp/css/dnav.min.css">
+    <link rel="stylesheet" href="/app/soswapp/faderbox.soswapp/css/faderbox.min.css">
     <!-- Project styling -->
     <link rel="stylesheet" href="<?php echo \html_style("base.css"); ?>">
   </head>
   <body>
-    <?php \TymFrontiers\Helper\setup_page("user-signup", "user", true, PRJ_HEADER_HEIGHT); ?>
+    <?php \TymFrontiers\Helper\setup_page("user-signup", "user", false, PRJ_HEADER_HEIGHT); ?>
     <?php include PRJ_INC_HEADER; ?>
 
     <section id="main-content">
       <div class="view-space">
         <div class="grid-8-tablet grid-6-laptop center-tablet">
-          <div class="sec-div color blue bg-white drop-shadow">
+          <div class="sec-div color face-primary bg-white drop-shadow">
             <header class="padding -p20 border -bmedium -bbottom">
               <h1 class="color-text"><?php echo $success ? "Your are good to go!" : "Update failed."; ?></h1>
             </header>
@@ -87,16 +86,16 @@ $rdt = !empty($rdt) ? $rdt : WHOST . "/user/login";
     </section>
     <?php include PRJ_INC_FOOTER; ?>
     <!-- Required scripts -->
-    <script src="<?php echo WHOST; ?>/7os/jquery-soswapp/js/jquery.min.js">  </script>
-    <script src="<?php echo WHOST; ?>/7os/js-generic-soswapp/js/js-generic.min.js">  </script>
-    <script src="<?php echo WHOST; ?>/7os/theme-soswapp/js/theme.min.js"></script>
+    <script src="/app/soswapp/jquery.soswapp/js/jquery.min.js">  </script>
+    <script src="/app/soswapp/js-generic.soswapp/js/js-generic.min.js">  </script>
+    <script src="/app/soswapp/theme.soswapp/js/theme.min.js"></script>
     <!-- optional plugins -->
-    <script src="<?php echo WHOST; ?>/7os/plugin-soswapp/js/plugin.min.js"></script>
-    <script src="<?php echo WHOST; ?>/7os/dnav-soswapp/js/dnav.min.js"></script>
-    <script src="<?php echo WHOST; ?>/7os/faderbox-soswapp/js/faderbox.min.js"></script>
+    <script src="/app/soswapp/plugin.soswapp/js/plugin.min.js"></script>
+    <script src="/app/soswapp/dnav.soswapp/js/dnav.min.js"></script>
+    <script src="/app/soswapp/faderbox.soswapp/js/faderbox.min.js"></script>
     <!-- project scripts -->
     <script src="<?php echo \html_script ("base.min.js"); ?>"></script>
-    <script src="<?php echo WHOST . "/user/assets/js/user.min.js" ?>"></script>
+    <script src="/app/tymfrontiers-cdn/user.soswapp/js/user.min.js"></script>
     <script type="text/javascript">
       $("#res-cnt-view").hide();
     </script>

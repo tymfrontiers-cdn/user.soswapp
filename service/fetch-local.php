@@ -1,7 +1,6 @@
 <?php
 namespace TymFrontiers;
-require_once "../app.init.php";
-require_once APP_BASE_INC;
+require_once "../.appinit.php";
 
 \header("Content-Type: application/json");
 $validator = new Validator();

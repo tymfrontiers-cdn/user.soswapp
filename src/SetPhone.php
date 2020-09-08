@@ -1,7 +1,7 @@
 <?php
 namespace TymFrontiers;
 use \SOS\User;
-require_once "../app.init.php";
+require_once "../.appinit.php";
 require_once APP_BASE_INC;
 
 \header("Content-Type: application/json");

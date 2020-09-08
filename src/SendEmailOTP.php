@@ -2,7 +2,7 @@
 namespace TymFrontiers;
 use \SOS\User;
 
-require_once "../app.init.php";
+require_once "../.appinit.php";
 require_once APP_BASE_INC;
 
 $data = new Data;

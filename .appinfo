@@ -1,0 +1,26 @@
+{
+  "nav" : false,
+  "icon" : "<i class='fas fa-icon'</i>",
+  "name" : "tymfrontiers-cdn/base-service.soswapp",
+  "title" : "Base service",
+  "description" : "7 OS Project Web Service",
+  "homepage" : "https://github.com/tymfrontiers-cdn/base-service.soswapp",
+  "authors": [
+      {
+        "name": "Ikechukwu Okalia",
+        "email": "dev@ikechukwuokalia.com"
+      },
+      {
+        "name": "Tym Frontiers Ltd.",
+        "email": "dev@tymfrontiers.com"
+      }
+  ],
+  "support" : {
+    "email" : "dev@tymfrontiers.com",
+    "website" : "https://dev.tymfrontiers.com",
+    "kollabo" : "tymfrontiers",
+    "twitter" : "tymfrontiers",
+    "facebook" : "tymfrontiers",
+    "instagram" : "tymfrontiers"
+  }
+}

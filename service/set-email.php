@@ -1,7 +1,6 @@
 <?php
 namespace TymFrontiers;
-require_once "../app.init.php";
-require_once APP_BASE_INC;
+require_once "../.appinit.php";
 \require_login(false);
 
 $errors = [];
@@ -33,7 +32,7 @@ $user = \SOS\User::find($session->name);
     <div class="padding -p20">&nbsp;</div>
     <br class="c-f">
     <div class="grid-8-tablet grid-6-desktop center-tablet">
-      <div class="sec-div color face-secondary bg-white drop-shadow">
+      <div class="sec-div color face-primary bg-white drop-shadow">
         <header class="padding -p20 color-bg">
           <h1> <i class="fas fa-envelope"></i> Change contact email</h1>
         </header>
@@ -51,9 +50,7 @@ $user = \SOS\User::find($session->name);
             id="set-email-form"
             class="block-ui send-otp"
             method="post"
-            action="/src/SendEmailOTP.php"
-            data-path="/user"
-            data-domain="<?php echo WHOST;?>"
+            action="/app/tymfrontiers-cdn/user.soswapp/src/SendEmailOTP.php"
             data-validate="false"
             onsubmit="sos.form.submit(this,doneSetting); return false;"
             >
@@ -78,7 +75,7 @@ $user = \SOS\User::find($session->name);
             <br class="c-f">
             <div class="grid-7-phone grid-5-tablet">
               <br>
-              <button id="submit-form" type="submit" class="btn face-secondary"> <i class="fas fa-angle-right"></i> Continue </button>
+              <button id="submit-form" type="submit" class="btn face-primary"> <i class="fas fa-angle-right"></i> Continue </button>
             </div>
 
             <br class="c-f">
@@ -98,8 +95,7 @@ $user = \SOS\User::find($session->name);
       var form = $('#set-email-form');
       if (form.hasClass('send-otp')) {
         form.removeClass('send-otp')
-          .attr('action','/src/SetEmail.php')
-          .data('path','/user');
+          .attr('action','/app/tymfrontiers-cdn/user.soswapp/src/SetEmail.php')
         $('.hide-first').show();
         $('input[name=otp]').prop('required',true).focus();
         setTimeout(function(){

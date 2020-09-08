@@ -29,12 +29,14 @@
     "tymfrontiers-cdn/php-sos-user": ">=0.1.0@stable",
     "tymfrontiers-cdn/php-sos-admin": ">=0.1.0@stable",
     "tymfrontiers-cdn/php-otp": ">=0.1.0@stable",
-    "7os/theme-soswapp" : ">=0.1@stable",
-    "7os/jquery-soswapp" : ">=0.1@stable",
-    "7os/js-generic-soswapp" : ">=0.1@stable",
-    "7os/file-soswapp" : ">=0.1@stable",
-    "7os/plugin-soswapp" : ">=0.1@stable",
-    "7os/font-awesome-soswapp" : ">=0.1@stable"
+    "soswapp/theme.soswapp" : ">=0.1@stable",
+    "soswapp/jquery.soswapp" : ">=0.1@stable",
+    "soswapp/js-generic.soswapp" : ">=0.1@stable",
+    "soswapp/file.soswapp" : ">=0.1@stable",
+    "soswapp/fancybox.soswapp" : ">=0.1@stable",
+    "soswapp/plugin.soswapp" : ">=0.1@stable",
+    "soswapp/font-awesome.soswapp" : ">=0.1@stable",
+    "ikechukwuokalia/file-manager.soswapp" : ">=0.1@stable"
   },
   "require-dev": {},
   "autoload": {

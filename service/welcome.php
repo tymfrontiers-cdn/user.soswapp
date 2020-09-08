@@ -3,7 +3,7 @@ namespace TymFrontiers;
 use \Michelf\Markdown;
 ?>
 <!DOCTYPE html>
-<html lang="en" dir="ltr" manifest="<?php echo WHOST; ?>/site.webmanifest">
+<html lang="en" dir="ltr" manifest="/site.webmanifest">
   <head>
     <meta charset="utf-8">
     <title>User Portal | <?php echo PRJ_TITLE; ?></title>
@@ -14,13 +14,13 @@ use \Michelf\Markdown;
     <meta name="publisher" content="<?php echo PRJ_PUBLISHER; ?>">
     <meta name="robots" content='nofollow'>
     <!-- Theming styles -->
-    <link rel="stylesheet" href="<?php echo WHOST; ?>/7os/font-awesome-soswapp/css/font-awesome.min.css">
-    <link rel="stylesheet" href="<?php echo WHOST; ?>/7os/theme-soswapp/css/theme.min.css">
-    <link rel="stylesheet" href="<?php echo WHOST; ?>/7os/theme-soswapp/css/theme-<?php echo PRJ_THEME; ?>.min.css">
+    <link rel="stylesheet" href="/app/soswapp/font-awesome.soswapp/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/app/soswapp/theme.soswapp/css/theme.min.css">
+    <link rel="stylesheet" href="/app/soswapp/theme.soswapp/css/theme-<?php echo PRJ_THEME; ?>.min.css">
     <!-- optional plugin -->
-    <link rel="stylesheet" href="<?php echo WHOST; ?>/7os/plugin-soswapp/css/plugin.min.css">
-    <link rel="stylesheet" href="<?php echo WHOST; ?>/7os/dnav-soswapp/css/dnav.min.css">
-    <link rel="stylesheet" href="<?php echo WHOST; ?>/7os/faderbox-soswapp/css/faderbox.min.css">
+    <link rel="stylesheet" href="/app/soswapp/plugin.soswapp/css/plugin.min.css">
+    <link rel="stylesheet" href="/app/soswapp/dnav.soswapp/css/dnav.min.css">
+    <link rel="stylesheet" href="/app/soswapp/faderbox.soswapp/css/faderbox.min.css">
     <!-- Project styling -->
     <link rel="stylesheet" href="<?php echo \html_style("base.css"); ?>">
   </head>
@@ -48,13 +48,13 @@ use \Michelf\Markdown;
             <p>Quick links to get you started with your account.</p>
             <ul style="list-style:none" class="color grey">
               <li class="padding -p10 border -bthin -bbottom">
-                <a href="<?php echo WHOST . "/user/sign-up"; ?>"> <i class="fas fa-plus"></i> Create an account</a>
+                <a href="/app/user/register"> <i class="fas fa-plus"></i> Create an account</a>
               </li>
               <li class="padding -p10 border -bthin -bbottom">
-                <a href="<?php echo WHOST . "/user/sign-in"; ?>"> <i class="fas fa-sign-in-alt"></i> Sign-in</a>
+                <a href="/app/user/login"> <i class="fas fa-sign-in-alt"></i> Sign-in</a>
               </li>
               <li class="padding -p10 border -bthin -bbottom">
-                <i class="fas fa-key"></i> Forgot your login detail? <a href="<?php echo WHOST . "/user/password-reset"; ?>">Reset now</a>
+                <i class="fas fa-key"></i> Forgot your login detail? <a href="/app/user/login/reset">Reset now</a>
               </li>
             </ul>
           </div>
@@ -64,13 +64,13 @@ use \Michelf\Markdown;
     </section>
     <?php include PRJ_INC_FOOTER; ?>
     <!-- Required scripts -->
-    <script src="<?php echo WHOST; ?>/7os/jquery-soswapp/js/jquery.min.js">  </script>
-    <script src="<?php echo WHOST; ?>/7os/js-generic-soswapp/js/js-generic.min.js">  </script>
-    <script src="<?php echo WHOST; ?>/7os/theme-soswapp/js/theme.min.js"></script>
+    <script src="/app/soswapp/jquery.soswapp/js/jquery.min.js">  </script>
+    <script src="/app/soswapp/js-generic.soswapp/js/js-generic.min.js">  </script>
+    <script src="/app/soswapp/theme.soswapp/js/theme.min.js"></script>
     <!-- optional plugins -->
-    <script src="<?php echo WHOST; ?>/7os/plugin-soswapp/js/plugin.min.js"></script>
-    <script src="<?php echo WHOST; ?>/7os/dnav-soswapp/js/dnav.min.js"></script>
-    <script src="<?php echo WHOST; ?>/7os/faderbox-soswapp/js/faderbox.min.js"></script>
+    <script src="/app/soswapp/plugin.soswapp/js/plugin.min.js"></script>
+    <script src="/app/soswapp/dnav.soswapp/js/dnav.min.js"></script>
+    <script src="/app/soswapp/faderbox.soswapp/js/faderbox.min.js"></script>
     <!-- project scripts -->
     <script src="<?php echo \html_script ("base.min.js"); ?>"></script>
   </body>
