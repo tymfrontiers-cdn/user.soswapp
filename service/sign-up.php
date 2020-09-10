@@ -125,7 +125,7 @@ $img_idx = [1, 2, 3, 4, 4, 3, 2, 1];
             <!-- <p> <a href="#signup-form" onclick="$('a[name=signup-form]').scroll_view();">Back to form <i class="fas fa-arrow-up"></i></a></p> -->
           </div>
         </div>
-        <div class="grid-10-phone grid-8-tablet grid-7-laptop grid-6-desktop">
+        <div class="grid-8-tablet grid-7-laptop grid-6-desktop">
           <div class="sec-div color face-primary bg-white drop-shadow">
             <header class="color-bg padding -p20">
               <span class="fa-stack fa-2x push-right">
@@ -294,7 +294,7 @@ $img_idx = [1, 2, 3, 4, 4, 3, 2, 1];
                   <input type="checkbox" class="solid" name="accepted_terms" value="1" id="accept-terms" required>
                   <label for="accept-terms" class="bold color-text">I have read and accepted terms.</label>
                 </div>
-                <div class="grid-5-phone">
+                <div class="grid-8-phone grid-5-tablet">
                   <button type="submit" class="btn face-primary"> <i class="fas fa-check"></i> Sign up</button>
                 </div>
                 <br class="c-f">

@@ -84,7 +84,7 @@ $img_idx = [1,2, 3, 4];
                   <input type="checkbox" class="solid" name="remember" value="1" id="remember">
                   <label for="remember" class="bold color-text">Remember me</label>
                 </div>
-                <div class="grid-7-phone">
+                <div class="grid-8-phone">
                   <button type="submit" id="rsd-click" class="sos-btn face-primary">Sign in <i class="fas fa-sign-in-alt"></i></button>
                 </div>
 
