@@ -49,7 +49,7 @@ if (!$reference = $data->decodeDecrypt($params['reference'])) {
               <p>You are one step away from your account.</p>
             </header>
             <div class="padding -p20">
-              <p>We need to confirm your email is reachable, please follow <code>link</code> in email sent to you verify your email.</p>
+              <p>We need to confirm your email is reachable, please follow <code>link</code> in email sent to you to verify your email.</p>
               <h3>Didn't see the email?</h3>
               <p>Some times the email might take up to 15 minutes to arrive, please refresh your folders.</p>
               <p>Alternatively, check your spam folder if you did not see it in your inbox, should you find our email in your spam folder? Kindly move to inbox and unmark our domain [<code><?php echo PRJ_DOMAIN; ?></code>] as spam for a smooth communication next time.</p>
