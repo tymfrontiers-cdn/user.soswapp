@@ -16,7 +16,7 @@ $params = $gen->requestParam([
 ],'get',[]);
 $location = false;
 try {
-  // $location = new Location();
+  $location = new Location();
 } catch (\Exception $e) {
   // die($e->getMessage());
   $location = false;
