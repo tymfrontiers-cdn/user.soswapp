@@ -68,7 +68,6 @@ $img_idx = [1,2, 3, 4];
                 onsubmit="sos.form.submit(this, signIn); return false;"
               >
               <input type="hidden" name="rdt" value="<?php echo !empty($params['rdt']) ? $params['rdt'] : ''; ?>">
-                <input type="hidden" name="reference" value="<?php echo $reference; ?>">
                 <input type="hidden" name="CSRF_token" value="<?php echo $session->createCSRFtoken('long-form'); ?>">
                 <input type="hidden" name="form" value="long-form">
 

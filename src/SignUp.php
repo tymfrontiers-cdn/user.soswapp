@@ -183,6 +183,7 @@ $auth_link = Generic::setGet(WHOST . "/app/tymfrontiers-cdn/user.soswapp/service
 $subject = "Welcome to " . PRJ_TITLE;
 $prj_title = PRJ_TITLE;
 $prj_icon = \defined("PRJ_EMAIL_ICON") ? PRJ_EMAIL_ICON : PRJ_ICON_150X150;
+$prj_icon = WHOST .  $prj_icon;
 $prj_color_primary = PRJ_PRIMARY_COLOUR;
 // OTP
 

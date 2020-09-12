@@ -37,8 +37,8 @@ use \Michelf\Markdown;
             } ?>
             <br class="c-f">
             <p class="align-c">
-              <a href="<?php echo WHOST . "/user/sign-up"; ?>" class="sos-btn green"> <i class="fas fa-plus"></i> Sign up now</a>
-              <a href="<?php echo WHOST . "/user/sign-in"; ?>" class="sos-btn blue"> <i class="fas fa-sign-in-alt"></i> Sign in</a>
+              <a href="/app/user/sign-up" class="sos-btn green"> <i class="fas fa-plus"></i> Sign up now</a>
+              <a href="/app/user/sign-in" class="sos-btn blue"> <i class="fas fa-sign-in-alt"></i> Sign in</a>
             </p>
           </div>
         </div>
@@ -54,7 +54,7 @@ use \Michelf\Markdown;
                 <a href="/app/user/login"> <i class="fas fa-sign-in-alt"></i> Sign-in</a>
               </li>
               <li class="padding -p10 border -bthin -bbottom">
-                <i class="fas fa-key"></i> Forgot your login detail? <a href="/app/user/login/reset">Reset now</a>
+                <i class="fas fa-key"></i> Forgot your login detail? <a href="/app/user/password-reset">Reset now</a>
               </li>
             </ul>
           </div>
