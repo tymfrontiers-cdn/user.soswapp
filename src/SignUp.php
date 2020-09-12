@@ -329,56 +329,56 @@ if ($referer) {
     $country_name = ($country_name = (new MultiForm(MYSQL_DATA_DB, "country", "code"))->findById($user->country_code)) ? $country_name->name : NULL;
     $reg_datetym = \strftime(BetaTym::MYSQL_DATETYM_STRING, \time());
     $f_subject = "You have a new follower";
-    $f_message = <<<FMSG
-    <html lang="en" dir="ltr">
-      <head>
-        <meta charset="utf-8" />
-        <style type="text/css">
-          table th{ font-weight:bold; padding:8px; text-align:left; }
-          table td{ padding:8px; }
-          table tr{ border-bottom: solid 1px grey; }
-          table tr:nth-child(odd){ background-color:#cbcbcb; }
-        </style>
-      </head>
-      <body style="max-width:580px; padding:12px; background-color:#e4e4e4; color:black;">
-        <header style="border-bottom: solid 5px {$prj_color_primary}; padding: 12px; margin-bottom: 8px;">
-          <p style="margin: 5 0; text-align:right;">
-            <a href="{$whost}/app/user">
-              <img style="max-width:40%; max-height:72px; margin:0 0 3px 3px;" src="{$prj_icon}" alt="Logo" />
-            </a>
-          </p>
-          <h1 style="margin: 5px 0">New follower notice</h1>
-        </header>
-        <p> Hello {$referer->name}</p>
-        <p>A new member is now following you on our platform, the following are the user's details</p>
-        <table>
-          <tr>
-            <th>Name</th>
-            <td>{$user->name} {$user->surname}</td>
-          </tr>
-          <tr>
-            <th>Email</th>
-            <td>{$user->email}</td>
-          </tr>
-          <tr>
-            <th>Phone</th>
-            <td>{$data->phoneToLocal($user->phone)}</td>
-          </tr>
-          <tr>
-            <th>Country/Region</th>
-            <td>{$user->country_code} - {$country_name}</td>
-          </tr>
-          <tr>
-            <th>Joined</th>
-            <td>{$tym->dateTym($reg_datetym)}</td>
-          </tr>
-        </table>
-        <p>Kindly follow up with your new downline to ensure maximal collective benefit.</p>
-        <hr />
-        <p style="font-size:0.75em; text-align:center"> <a href="{$whost}/app/newsletter/unsubscribe">Unsubscribe</a> to this notification</p>
-      </body>
-    </html>
-    FMSG;
+$f_message = <<<FMSG
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <style type="text/css">
+      table th{ font-weight:bold; padding:8px; text-align:left; }
+      table td{ padding:8px; }
+      table tr{ border-bottom: solid 1px grey; }
+      table tr:nth-child(odd){ background-color:#cbcbcb; }
+    </style>
+  </head>
+  <body style="max-width:580px; padding:12px; background-color:#e4e4e4; color:black;">
+    <header style="border-bottom: solid 5px {$prj_color_primary}; padding: 12px; margin-bottom: 8px;">
+      <p style="margin: 5 0; text-align:right;">
+        <a href="{$whost}/app/user">
+          <img style="max-width:40%; max-height:72px; margin:0 0 3px 3px;" src="{$prj_icon}" alt="Logo" />
+        </a>
+      </p>
+      <h1 style="margin: 5px 0">New follower notice</h1>
+    </header>
+    <p> Hello {$referer->name}</p>
+    <p>A new member is now following you on our platform, the following are the user's details</p>
+    <table>
+      <tr>
+        <th>Name</th>
+        <td>{$user->name} {$user->surname}</td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td>{$user->email}</td>
+      </tr>
+      <tr>
+        <th>Phone</th>
+        <td>{$data->phoneToLocal($user->phone)}</td>
+      </tr>
+      <tr>
+        <th>Country/Region</th>
+        <td>{$user->country_code} - {$country_name}</td>
+      </tr>
+      <tr>
+        <th>Joined</th>
+        <td>{$tym->dateTym($reg_datetym)}</td>
+      </tr>
+    </table>
+    <p>Kindly follow up with your new downline to ensure maximal collective benefit.</p>
+    <hr />
+    <p style="font-size:0.75em; text-align:center"> <a href="{$whost}/app/newsletter/unsubscribe">Unsubscribe</a> to this notification</p>
+  </body>
+</html>
+FMSG;
     $f_message_text = "{$user->name} {$user->surname} - {$user->email} is now following you";
     // queue message
     $f_queue = new \SOS\EMailer([
