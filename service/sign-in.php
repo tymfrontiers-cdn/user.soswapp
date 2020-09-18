@@ -9,8 +9,9 @@ $params = $gen->requestParam([
 ],'get',[]);
 if ($session->isLoggedIn()) {
   $rdt = empty($params["rdt"])
-    ? WHOST . "/user"
+    ? "/app/user"
     : $params["rdt"];
+  HTTP\Header::redirect($rdt);
 }
 $img_idx = [1,2, 3, 4];
 ?>

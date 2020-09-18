@@ -5,7 +5,6 @@ use \SOS\User,
 require_once "../.appinit.php";
 require_once APP_ROOT . "/src/Helper.php";
 
-if ($session->isLoggedIn()) HTTP\Header::redirect("/apps/user/dashboard");
 $gen = new Generic;
 $data = new Data;
 if (!empty($_GET['referer'])) $_GET['referer'] = \str_replace(["-","."],"",$_GET['referer']);
@@ -14,6 +13,12 @@ $params = $gen->requestParam([
   "rmck" => ["rmck","boolean"],
   "referer" => ["referer","username",3,12,[],"MIXED"]
 ],'get',[]);
+if ($session->isLoggedIn()) {
+  $rdt = empty($params["rdt"])
+    ? WHOST . "/app/user"
+    : $params["rdt"];
+  HTTP\Header::redirect($rdt);
+}
 $location = false;
 try {
   $location = new Location();
@@ -66,7 +71,7 @@ if ($user_min_age = Helper\setting_get_value("SYSTEM", "USER.MIN-AGE", PRJ_BASE_
   $user_min_age = 18;
 }
 
-$img_idx = [1, 2, 3, 4, 4, 3, 2, 1];
+$img_idx = [1, 2, 4, 4, 2, 1];
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr" manifest="/site.webmanifest">
