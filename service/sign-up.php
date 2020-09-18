@@ -9,9 +9,12 @@ $gen = new Generic;
 $data = new Data;
 if (!empty($_GET['referer'])) $_GET['referer'] = \str_replace(["-","."],"",$_GET['referer']);
 $params = $gen->requestParam([
+  "email" => ["email","email"],
+  "name" => ["name","name"],
+  "surname" => ["surname","name"],
   "rdt" => ["rdt","url"],
   "rmck" => ["rmck","boolean"],
-  "referer" => ["referer","username",3,12,[],"MIXED"]
+  "referer" => ["referer","username",3,12,[],"MIXED", ["-"]]
 ],'get',[]);
 if ($session->isLoggedIn()) {
   $rdt = empty($params["rdt"])
@@ -26,6 +29,7 @@ try {
   // die($e->getMessage());
   $location = false;
 }
+if (!empty($params['referer'])) $params['referer'] = \strtoupper(\str_replace(["-","."], "", $params['referer']));
 if ($params['rmck']) Helper\destroy_cookie("_TFUSRREF");
 $ref = NULL;
 if (!(bool)$params['rmck']) {
@@ -168,11 +172,11 @@ $img_idx = [1, 2, 4, 4, 2, 1];
 
                 <div class="grid-6-tablet">
                   <label for="name" class="placeholder"><i class="fas fa-user-tag"></i> Name <i class="fas fa-asterisk fa-sm rq-tag color-red"></i></label>
-                  <input type="text" name="name" placeholder="Given name" autocomplete="given-name" id="name" required>
+                  <input type="text" name="name" value="<?php echo !empty($params['name']) ? $params['name'] : ''; ?>" placeholder="Given name" autocomplete="given-name" id="name" required>
                 </div>
                 <div class="grid-6-tablet">
                   <label class="placeholder" for="surname"><i class="fas fa-user-tag"></i> Surname <i class="fas fa-asterisk fa-sm rq-tag color-red"></i></label>
-                  <input type="text" name="surname" autocomplete="family-name" placeholder="Family name" id="surname" required>
+                  <input type="text" value="<?php echo !empty($params['surname']) ? $params['surname'] : ''; ?>" name="surname" autocomplete="family-name" placeholder="Family name" id="surname" required>
                 </div>
                 <?php if (UH\register_field_include($field_include, "middle_name")) { ?>
                   <br class="c-f">
@@ -276,7 +280,7 @@ $img_idx = [1, 2, 4, 4, 2, 1];
                 <br class="c-f"> <br>
                 <div class="grid-7-tablet">
                   <label class="placeholder" for="email"> <i class="fas fa-envelope-open-text"></i> Email address <i class="fas fa-asterisk fa-sm rq-tag color-red"></i></label>
-                  <input type="email" placeholder="email@mydomain.ext" required name="email" autocomplete="email" id="email">
+                  <input type="email" placeholder="email@mydomain.ext" required name="email" value="<?php echo !empty($params['email']) ? $params['email'] : ''; ?>" autocomplete="email" id="email">
                 </div>
                 <?php if (UH\register_field_include($field_include, "phone")) { ?>
                   <div class="grid-5-tablet">
