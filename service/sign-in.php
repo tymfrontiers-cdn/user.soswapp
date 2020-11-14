@@ -49,8 +49,8 @@ $img_idx = [1,2, 3, 4];
     </div>
     <section id="main-content">
       <div class="view-space">
-        <div class="grid-5-tablet grid-7-laptop grid-8-desktop"></div>
-        <div class="grid-9-phone grid-7-tablet grid-5-laptop grid-4-desktop center-phone uncenter-tablet">
+        <div class="grid-5-tablet grid-6-laptop grid-7-desktop"></div>
+        <div class="grid-11-phone grid-7-tablet grid-6-laptop grid-5-desktop center-phone uncenter-tablet">
           <div class="sec-div color face-primary bg-white drop-shadow">
             <header class="padding -p20 border -bmedium -bbottom">
               <span class="fa-stack fa-2x push-right color-text">

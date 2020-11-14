@@ -71,7 +71,7 @@ $rdt = !empty($rdt) ? $rdt : "/app/user/login";
             <div class="padding -p20">
               <?php if ($success) { ?>
                 <p>
-                  Thank, your email has been verified.
+                  Thanks, your email has been verified.
                   <a href="<?php echo $rdt; ?>"> Continue <i class="fas fa-angle-double-right"></i></a>
                 </p>
 
