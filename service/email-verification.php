@@ -3,6 +3,8 @@ namespace TymFrontiers;
 require_once "../.appinit.php";
 require_once APP_ROOT . "/src/Helper.php";
 \require_login(true);
+if ($session->user->status !== "PENDING") HTTP\Header::redirect("/app/user");
+
 $gen = new Generic;
 $data = new Data;
 $params = $gen->requestParam([
