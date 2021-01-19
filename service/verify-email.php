@@ -33,7 +33,7 @@ if ($database->query("UPDATE `{$base_db}`.`user` SET status='ACTIVE' WHERE email
   $success = true;
   $session->logout();
 }
-$rdt = !empty($rdt) ? $rdt : "/app/user/login";
+$rdt = !empty($params["rdt"]) ? Generic::setGet("/app/user/login",["rdt"=>$params["rdt"]]) : "/app/user/login";
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr" manifest="/site.webmanifest">
