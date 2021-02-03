@@ -70,7 +70,7 @@ $user = (new MultiForm(MYSQL_BASE_DB,'user_profile','user'))->findById($params['
 if( !$user ){
   echo \json_encode([
     "status" => "3.1",
-    "errors" => ["User profile not found.",$database->last_query],
+    "errors" => ["User profile not found."],
     "message" => "Request failed"
   ]);
   exit;

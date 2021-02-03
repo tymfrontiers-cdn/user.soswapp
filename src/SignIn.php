@@ -46,7 +46,7 @@ $user = User::authenticate($params["email"],$params["password"],"NG");
 if( !$user ){
   echo \json_encode([
     "status" => "3.1",
-    "errors" => ["Credentials validation failed.", $db->last_query],
+    "errors" => ["Credentials validation failed."],
     "message" => "Login failed",
     "rdt" => ""
   ]);
